@@ -1,0 +1,286 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+input, button {
+  border: 1px solid #999;
+  outline: none;
+}
+
+input:focus, button:focus {
+  outline: 2px solid black;
+}
+
+input[type="text"], input[type="number"], textarea {
+  box-sizing: border-box;
+  padding: 5px 15px;
+  border: 1px solid #999;
+  border-radius: 20px;
+}
+
+input[type="number"] {
+  border-radius: 0;
+  padding: 0 5px;
+  width: 40px;
+}
+
+svg {
+  vertical-align: top;
+}
+
+/* Layout */
+
+nav {
+  background-color: #999;
+  padding: 20px;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav a {
+  font-size: 1.5em;
+}
+
+button#burger {
+  display: none;
+  outline: none;
+  border: none;
+  font-size: 1.5em;
+  padding: 10px;
+  background-color: #666;
+}
+
+button#burger:hover {
+  cursor: pointer;
+  background-color: #777;
+}
+
+#main {
+  margin: auto;
+  width: 900px;
+  padding: 10px 50px;
+}
+
+.product img {
+  height: 250px;
+}
+
+@media screen and (width < 900px) {
+  #main {
+    width: 600px;
+  }
+
+  .product img {
+    height: 100px;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul#links {
+    display: none;
+  }
+
+  nav ul#links.open {
+    display: block;
+  }
+
+  button#burger {
+    display: block;
+  }
+}
+
+@keyframes testanim {
+  50% { background-color: black }
+  100% { background-color: #999 }
+}
+
+#test {
+  background-color: #999;
+  animation-name: testanim;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+/* Products Page */
+
+#products {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.product-card {
+  width: 250px;
+  background-color: white;
+  border: 1px solid #999;
+  border-radius: 10px;
+  overflow: hidden;
+  transition:
+    background-color 1s,
+    border-color 1s;
+}
+
+.product-card:hover {
+  background-color: #ccc;
+  border: 5px solid black;
+}
+
+.product-card .infos {
+  padding: 10px 15px 12px 15px;
+}
+
+.product-card .infos .name-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-card .infos .name {
+  font-weight: bold;
+}
+
+.product-card .infos .price {
+  font-style: italic;
+}
+
+.product-card p {
+  margin: 0;
+  margin-top: 1em;
+}
+
+.search-input {
+  width: 350px;
+}
+
+/* Product Page */
+.product {
+  display: flex;
+  flex-direction: row;
+}
+
+.product .infos {
+  width: 400px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.product .infos h1 {
+  margin: 0;
+}
+
+.product .infos .name-rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product .infos .rating {
+  font-size: 1.5em;
+}
+
+.product .infos .price {
+  font-size: 2em;
+  font-style: italic;
+}
+
+.product .stock-cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.product .stock-cart .stock {
+  display: flex;
+  align-items: center;
+}
+
+.product form button, .product form input {
+  border-radius: 0;
+  height: 30px;
+}
+
+.product form input[type="submit"] {
+  margin-left: 10px;
+}
+
+/* Sell Page */
+.sell-form {
+  width: 400px;
+}
+
+.sell-form label {
+  display: inline-block;
+  width: 100px;
+  vertical-align: top;
+}
+
+.sell-form div {
+  margin-bottom: 20px;
+}
+
+.sell-form input, .sell-form textarea {
+  width: 300px;
+}
+
+.sell-form input[type="submit"] {
+  float: right;
+  width: auto;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+/* Cart Page */
+.cart-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-entry .img-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-entry + .cart-entry {
+  margin-top: 10px;
+}
+
+.cart-entry .quantity button, .cart-entry .quantity input {
+  height: 30px;
+}
+
+.cart-entry .price, .total-price span {
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+.total-price span {
+  float: right;
+}
+
